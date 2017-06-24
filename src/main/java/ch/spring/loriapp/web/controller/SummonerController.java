@@ -24,7 +24,7 @@ public class SummonerController {
 	SummonerService summonerService;
 
 	@GetMapping("/summoner/{region}/{summoner}")
-	public String openSummoner(@PathVariable Region region, @PathVariable String summoner, @ModelAttribute SummonerModel model) {
+	public String openSummoner(@PathVariable Region region, @PathVariable String summoner, @ModelAttribute("model") SummonerModel model) {
 
 		Summoner sum = null;
 		try {

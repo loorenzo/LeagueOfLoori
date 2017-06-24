@@ -22,6 +22,7 @@ public class ObjectMapperHelper {
 		leagueObject.setWins(league.getWins());
 		
 		StringBuilder sb = new StringBuilder();
+		sb.append("tier-icons/");
 		sb.append(leagueObject.getTier().toLowerCase());
 		sb.append("_");
 		sb.append(leagueObject.getRank().toLowerCase());
