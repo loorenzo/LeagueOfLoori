@@ -16,7 +16,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import ch.spring.loriapp.business.riot.common.BaseRiotProperties;
 import ch.spring.loriapp.business.riot.common.Region;
-import ch.spring.loriapp.business.riot.entity.Leagues;
+import ch.spring.loriapp.business.riot.entity.League;
 import ch.spring.loriapp.business.riot.entity.Summoner;
 import ch.spring.loriapp.exception.RiotApiException;
 
@@ -61,7 +61,7 @@ public class SummonerService extends BaseRiotProperties {
 		}
 	}
 
-	public List<Leagues> getLeaguesById(int summonerId, Region region) throws RiotApiException {
+	public List<League> getLeaguesById(int summonerId, Region region) throws RiotApiException {
 
 		try {
 			StringBuilder sb = new StringBuilder();
@@ -71,7 +71,7 @@ public class SummonerService extends BaseRiotProperties {
 			sb.append("?api_key=");
 			sb.append(getRiotApiKey());
 			URL url = new URL(sb.toString());
-			return objectMapper.readValue(url, new TypeReference<List<Leagues>>() {
+			return objectMapper.readValue(url, new TypeReference<List<League>>() {
 			});
 		} catch (IOException e) {
 			throw new RiotApiException(e.getMessage());
